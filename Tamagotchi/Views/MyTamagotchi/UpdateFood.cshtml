@@ -1,0 +1,29 @@
+<h1>To Do List Item Details: </h1>
+
+<h2>Name : @Model.GetName()</h2>
+<h2>Food : @Model.GetFood()</h2>
+<h2>Sleep : @Model.GetSleep()</h2>
+<h2>Attention : @Model.GetAttention()</h2>
+<h2>Health : @Model.GetHealth()</h2>
+
+
+<form action="/mytamagotchi/feed/@Model.GetId()" method="post">
+  <button type="submit" name="button">Give food</button>
+</form>
+<form action="/mytamagotchi/sleep/@Model.GetId()" method="post">
+  <button type="submit" name="button">Make your Tamagotchi sleep</button>
+</form>
+<form action="/mytamagotchi/attention/@Model.GetId()" method="post">
+  <button type="submit" name="button">Play with your Tamagotchi</button>
+</form>
+<form action="/mytamagotchi/health/@Model.GetId()" method="post">
+  <button type="submit" name="button">Give exercise to your Tamagotchi</button>
+</form>
+
+<a href='/mytamagotchi/new'>Add another item</a>
+<a href='/mytamagotchi'>View all items</a>
+
+@if(Model.CheckLife() == false)
+{
+  <h2>your Tamagotchi has died!</h2>
+}
