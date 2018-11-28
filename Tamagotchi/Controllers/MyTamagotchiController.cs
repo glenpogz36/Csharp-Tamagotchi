@@ -33,7 +33,7 @@ namespace Tamagotchi.Controllers
       MyTamagotchi myTamagotchi = MyTamagotchi.Find(id);
       myTamagotchi.GiveFood();
       myTamagotchi.ReduceStats();
-      return View(myTamagotchi);
+      return View("Show",myTamagotchi);
      }
      [HttpPost("/mytamagotchi/sleep/{id}")]
      public ActionResult UpdateSleep(int id)
@@ -41,7 +41,7 @@ namespace Tamagotchi.Controllers
       MyTamagotchi myTamagotchi = MyTamagotchi.Find(id);
       myTamagotchi.GiveSleep();
       myTamagotchi.ReduceStats();
-      return View(myTamagotchi);
+      return View("Show",myTamagotchi);
      }
      [HttpPost("/mytamagotchi/attention/{id}")]
      public ActionResult UpdateAttention (int id)
@@ -49,7 +49,7 @@ namespace Tamagotchi.Controllers
       MyTamagotchi myTamagotchi = MyTamagotchi.Find(id);
       myTamagotchi.GiveAttention();
       myTamagotchi.ReduceStats();
-      return View(myTamagotchi);
+      return View("Show",myTamagotchi);
      }
      [HttpPost("/mytamagotchi/health/{id}")]
      public ActionResult UpdateHealth (int id)
@@ -57,7 +57,7 @@ namespace Tamagotchi.Controllers
       MyTamagotchi myTamagotchi = MyTamagotchi.Find(id);
       myTamagotchi.GiveHealth();
       myTamagotchi.ReduceStats();
-      return View(myTamagotchi);
+      return View("Show",myTamagotchi);
      }
 
     [HttpPost("/mytamagotchi/delete")]

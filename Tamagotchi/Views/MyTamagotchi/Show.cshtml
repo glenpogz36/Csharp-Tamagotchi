@@ -20,6 +20,15 @@
   <button type="submit" name="button">Give exercise to your Tamagotchi</button>
 </form>
 
+<p>
+  <img src = @Model.GetPicture() height="200px" width="200px">
+</p>
+
 <a href='/mytamagotchi/new'>Add another item</a>
 <a href='/mytamagotchi'>View all items</a>
+
+@if(Model.CheckLife () == false)
+{
+   <h2> @Model.GetName() has died </h2>
+}
 

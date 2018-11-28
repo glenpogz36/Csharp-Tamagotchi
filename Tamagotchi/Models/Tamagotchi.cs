@@ -4,6 +4,7 @@ namespace Tamagotchi.Models
 {
   public class MyTamagotchi
   {
+    private string _picture;
     private string _name;
     private int _food;
     private int _sleep;
@@ -24,11 +25,18 @@ namespace Tamagotchi.Models
       _attention = 10;
       _health = 10;
       _alive = true;
+      _picture = "https://78.media.tumblr.com/96490983d93f4d0f94712df673ea6b37/tumblr_p81ppbq9Vz1uuvqtqo1_400.gif";
+    }
+
+    public string GetPicture()
+    {
+      return _picture;
     }
 
     public string GetName()
     {
       return _name;
+
     }
    public int GetFood()
     {
@@ -37,6 +45,7 @@ namespace Tamagotchi.Models
     public void GiveFood()
     {
       _food += 4;
+      _picture = "https://orig00.deviantart.net/de58/f/2016/058/8/5/sans_magotchi_by_fel_fisk-d9tds5g.gif";
     }
     public int GetSleep()
     {
@@ -45,6 +54,7 @@ namespace Tamagotchi.Models
     public void GiveSleep()
     {
       _sleep += 4;
+      _picture = "https://i.gifer.com/embedded/download/7j7Z.gif";
     }
      public int GetAttention()
     {
@@ -53,6 +63,7 @@ namespace Tamagotchi.Models
     public void GiveAttention()
     {
       _attention += 4;
+      _picture = "https://media.giphy.com/media/UneKtrcsN9j7W/giphy.gif";
     }
      public int GetHealth()
     {
@@ -61,6 +72,7 @@ namespace Tamagotchi.Models
     public void GiveHealth()
     {
       _health += 4;
+      _picture = "http://rs215.pbsrc.com/albums/cc190/foxxyloveofme/Tamagotchi/tamatchi.gif~c200";
     }
 
     public void ReduceStats()
@@ -84,6 +96,7 @@ namespace Tamagotchi.Models
     public void Die()
     {
       _alive = false;
+      _picture = "https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/3/5/16/anigif_enhanced-buzz-11911-1362517495-12.gif";
     }
 
     public static List<MyTamagotchi> GetAll()
